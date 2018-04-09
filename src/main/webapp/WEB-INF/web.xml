@@ -18,7 +18,14 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
 		<!-- 默认匹配所有的请求 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list>
 </web-app>

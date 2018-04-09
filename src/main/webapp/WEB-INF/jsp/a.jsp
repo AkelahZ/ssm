@@ -6,7 +6,7 @@
     System.out.println(basePath);
 %>
 
-<%@include file="bootstrap.jsp" %>
+<%@include file="common/bootstrap.jsp" %>
 <html>
 <body>
 Hello World!!!!
