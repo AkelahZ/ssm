@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增课程</title>
+    <meta name="keywords" content="add course">
+    <meta name="description" content="add course page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <!-- Dadepicker -->
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <!-- Drop Zone -->
+    <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>新增课程</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">科目 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                      <select class="chosen-select form-control m-b" tabindex="2">
+                        <option value="" selected="selected" disabled="disabled">选择科目</option>
+                        <option value="0" hassubinfo="true">吉他</option>
+                        <option value="1" hassubinfo="true">架子鼓</option>
+                        <option value="2" hassubinfo="true">钢琴</option>
+                      </select>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">课程名 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <input type="text" placeholder="最少两个字符" class="form-control">
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">授课形式 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                      <select class="chosen-select form-control m-b" id="scale" tabindex="2">
+                        <option value="" selected="selected" disabled="disabled">选择授课形式</option>
+                        <option value="large" hassubinfo="true">大课种</option>
+                        <option value="small" hassubinfo="true">小课种</option>
+                        <option value="combo" hassubinfo="true">连报</option>
+                      </select>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">具体类别 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <select class="chosen-select form-control m-b" tabindex="2">
+                        <option value="" selected="selected" disabled="disabled">选择具体类别</option>
+                        <option value="0" hassubinfo="true">启蒙班</option>
+                        <option value="1" hassubinfo="true">初级班</option>
+                        <option value="2" hassubinfo="true">中级班</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div id="combo-hidden">
+                  <div id="small-hidden">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">额定人数 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7"><input type="text" class="form-control" id="capacity"></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">课时数 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7"><input type="text" class="form-control" id="number"></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">定价 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <span class="input-group-addon">&yen;</span>
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                      </div></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <div class="col-sm-2 col-sm-offset-9">
+                      <button type="button" class="btn btn-primary showtoast">保存信息</button>
+                      <a class="btn btn-white" href="course_management.html">取消</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery.min.js?v=2.1.4"></script>
+      <script src="js/bootstrap.min.js?v=3.3.6"></script>
+      <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+	</script>
+    <script>
+	$(function(){
+		$("#scale").change(function(){
+			if($("#scale").val()!="combo"){
+				$("#number").attr("disabled",false);
+				$("#combo-hidden").attr("hidden",false);
+				if($("#scale").val()=="large"){
+					if($("#small-hidden").prop("hidden")){
+						$("#capacity").attr("disabled",false);
+						$("#small-hidden").attr("hidden",false);
+						}
+					} else {
+						if(!$("#small-hidden").prop("hidden")){
+							$("#capacity").attr("disabled",true);
+							$("#small-hidden").attr("hidden",true);
+							}
+						}
+				} else {
+					$("#number").attr("disabled",true);
+					if(!$("#small-hidden").prop("hidden")){
+						$("#capacity").attr("disabled",true);
+						$("#small-hidden").attr("hidden",true);
+						}
+						$("#combo-hidden").attr("hidden",true);
+					}
+			})
+		});
+	</script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

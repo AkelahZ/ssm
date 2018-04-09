@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选课</title>
+    <meta name="keywords" content="enroll in">
+    <meta name="description" content="enroll in page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>选课</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">学生姓名 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data_1">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">选课 1 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="scale1" tabindex="2">
+                      <option value="empty" hassubinfo="true" selected="selected">无</option>
+                      <option value="large" hassubinfo="true">大课种</option>
+                      <option value="small" hassubinfo="true">小课种</option>
+                      <option value="combo" hassubinfo="true">连报</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="enroll1" hidden="">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">科目 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="subject1" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择科目</option>
+                      <option value="guitar" hassubinfo="true">吉他</option>
+                      <option value="drum" hassubinfo="true">架子鼓</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">具体类别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="detail1" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择类别</option>
+                      <option value="lg0" hassubinfo="true">启蒙班</option>
+                      <option value="lg1" hassubinfo="true">初级班</option>
+                      <option value="lg2" hassubinfo="true">中级班</option>
+                      <option value="lg3" hassubinfo="true">高级班</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="combo-hidden1">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">工作日 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="workday1" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择工作日</option>
+                      <option value="sun" hassubinfo="true">周日</option>
+                      <option value="mon" hassubinfo="true">周一</option>
+                      <option value="tue" hassubinfo="true">周二</option>
+                      <option value="wed" hassubinfo="true">周三</option>
+                      <option value="thu" hassubinfo="true">周四</option>
+                      <option value="fri" hassubinfo="true">周五</option>
+                      <option value="sat" hassubinfo="true">周六</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">时间段 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="time1" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择时间段</option>
+                      <option value="lg0" hassubinfo="true">09:30 ~ 11:00</option>
+                      <option value="lg1" hassubinfo="true">11:10 ~ 12:40</option>
+                      <option value="lg2" hassubinfo="true">14:30 ~ 16:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">班别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data" id="class1">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                <div id="large-hidden1" hidden="">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">教室 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="classroom1" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择教室</option>
+                      <option value="cm0" hassubinfo="true">401</option>
+                      <option value="cm1" hassubinfo="true">402</option>
+                      <option value="cm2" hassubinfo="true">403</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">选课 2</label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="scale2" tabindex="2">
+                      <option value="empty" hassubinfo="true" selected="selected">无</option>
+                      <option value="large" hassubinfo="true">大课种</option>
+                      <option value="small" hassubinfo="true">小课种</option>
+                      <option value="combo" hassubinfo="true">连报</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="enroll2" hidden="">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">科目 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="subject2" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择科目</option>
+                      <option value="guitar" hassubinfo="true">吉他</option>
+                      <option value="drum" hassubinfo="true">架子鼓</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">具体类别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="detail2" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择类别</option>
+                      <option value="lg0" hassubinfo="true">启蒙班</option>
+                      <option value="lg1" hassubinfo="true">初级班</option>
+                      <option value="lg2" hassubinfo="true">中级班</option>
+                      <option value="lg3" hassubinfo="true">高级班</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="combo-hidden2">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">工作日 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="workday2" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择工作日</option>
+                      <option value="sun" hassubinfo="true">周日</option>
+                      <option value="mon" hassubinfo="true">周一</option>
+                      <option value="tue" hassubinfo="true">周二</option>
+                      <option value="wed" hassubinfo="true">周三</option>
+                      <option value="thu" hassubinfo="true">周四</option>
+                      <option value="fri" hassubinfo="true">周五</option>
+                      <option value="sat" hassubinfo="true">周六</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">时间段 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="time2" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择时间段</option>
+                      <option value="lg0" hassubinfo="true">09:30 ~ 11:00</option>
+                      <option value="lg1" hassubinfo="true">11:10 ~ 12:40</option>
+                      <option value="lg2" hassubinfo="true">14:30 ~ 16:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">班别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data" id="class2">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                <div id="large-hidden2">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">教室 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="classroom2" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择教室</option>
+                      <option value="cm0" hassubinfo="true">401</option>
+                      <option value="cm1" hassubinfo="true">402</option>
+                      <option value="cm2" hassubinfo="true">403</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">选课 3</label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="scale3" tabindex="2">
+                      <option value="empty" hassubinfo="true" selected="selected">无</option>
+                      <option value="large" hassubinfo="true">大课种</option>
+                      <option value="small" hassubinfo="true">小课种</option>
+                      <option value="combo" hassubinfo="true">连报</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="enroll3" hidden="">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">科目 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="subject3" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择科目</option>
+                      <option value="guitar" hassubinfo="true">吉他</option>
+                      <option value="drum" hassubinfo="true">架子鼓</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">具体类别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="detail3" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择类别</option>
+                      <option value="lg0" hassubinfo="true">启蒙班</option>
+                      <option value="lg1" hassubinfo="true">初级班</option>
+                      <option value="lg2" hassubinfo="true">中级班</option>
+                      <option value="lg3" hassubinfo="true">高级班</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="combo-hidden3">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">工作日 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="workday3" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择工作日</option>
+                      <option value="sun" hassubinfo="true">周日</option>
+                      <option value="mon" hassubinfo="true">周一</option>
+                      <option value="tue" hassubinfo="true">周二</option>
+                      <option value="wed" hassubinfo="true">周三</option>
+                      <option value="thu" hassubinfo="true">周四</option>
+                      <option value="fri" hassubinfo="true">周五</option>
+                      <option value="sat" hassubinfo="true">周六</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">时间段 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="time3" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择时间段</option>
+                      <option value="lg0" hassubinfo="true">09:30 ~ 11:00</option>
+                      <option value="lg1" hassubinfo="true">11:10 ~ 12:40</option>
+                      <option value="lg2" hassubinfo="true">14:30 ~ 16:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">班别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data" id="class3">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                <div id="large-hidden3">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">教室 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="classroom3" tabindex="2">
+                      <option value="" hassubinfo="true" selected="selected" disabled="disabled">选择教室</option>
+                      <option value="cm0" hassubinfo="true">401</option>
+                      <option value="cm1" hassubinfo="true">402</option>
+                      <option value="cm2" hassubinfo="true">403</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">经手人 1 </label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data_2">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">经手人 2 </label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data_2">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">折扣</label>
+                    <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <span class="input-group-addon">&yen;</span>
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                      </div></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <div class="col-sm-2 col-sm-offset-9">
+                      <a type="button" class="btn btn-primary" href="bill.html">单据预览</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery.min.js?v=2.1.4"></script>
+      <script src="js/bootstrap.min.js?v=3.3.6"></script>
+      <script src="js/content.min.js?v=1.0.0"></script>
+      <script src="js/plugins/suggest/bootstrap-suggest.min.js"></script>
+      <script>
+	  var testdataBsSuggest=$(".test_data").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"吉他启蒙1701班, 向君","description":"25/30人"},
+			  {"id":"2","word":"吉他小课种, 向君","description":"可选"},
+			  {"id":"3","word":"吉他初级1701班, 向君","description":"11/30人"},
+			  {"id":"4","word":"架子鼓启蒙1701班, 胡强","description":"2/4人"},
+			  ],"defaults":"10000000000"
+			  }
+			  });
+	  </script>
+      <script>
+	  var testdataBsSuggest=$(".test_data_1").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"张有为","description":"13800000000"},
+			  {"id":"2","word":"王利锋","description":"13800000001"},
+			  {"id":"3","word":"张有为","description":"13800000002"},
+			  {"id":"4","word":"袁岳","description":"13800000003"},
+			  {"id":"5","word":"李全福","description":"13800000004"},
+			  {"id":"6","word":"张有为222","description":"13800000005"}
+			  ],"defaults":"10000000000"
+			  }
+			  });
+	  </script>
+      <script>              		  
+	  var testdataBsSuggest=$(".test_data_2").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"张有为","description":"13800000000"},
+			  {"id":"2","word":"王利锋","description":"13800000001"},
+			  {"id":"3","word":"张有为","description":"13800000002"},
+			  {"id":"4","word":"袁岳","description":"13800000003"},
+			  {"id":"5","word":"李全福","description":"13800000004"},
+			  {"id":"6","word":"张有为222","description":"13800000005"}
+			  ],"defaults":"10000000000"
+			  }
+			  });
+    </script>
+    <script src="js/cheney_enroll.js"></script>
+    <script>
+	$(function(){
+		$("#scale1").change(function(){
+			num=1;
+			enrollFold(num);
+			})
+		$("#scale2").change(function(){
+			num=2;
+			enrollFold(num);
+			})
+		$("#scale3").change(function(){
+			num=3;
+			enrollFold(num);
+			})
+		});
+	</script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

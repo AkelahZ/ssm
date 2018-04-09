@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     @RequestMapping("/index")
     public String homepage(Model model){
-        model.addAttribute("indexMsg", "hello,this is index.jsp form homepage/index.do");
+        model.addAttribute("indexMsg", "hello,this is a.jsp form homepage/index.do");
         System.out.println("this is homepage!!!");
         return "a";
     }

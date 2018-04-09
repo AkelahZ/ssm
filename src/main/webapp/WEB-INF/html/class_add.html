@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增排班</title>
+    <meta name="keywords" content="add class">
+    <meta name="description" content="add class page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <!-- Dadepicker -->
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>新增排班</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal" action="http://www.zi-han.net/theme/hplus/form_wizard.html#">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">班名 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <input type="text" placeholder="最少两个字符" class="form-control">
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">科目 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" tabindex="2">
+                      <option value="" selected="selected" disabled="disabled">选择科目</option>
+                      <option value="0" hassubinfo="true">吉他</option>
+                      <option value="1" hassubinfo="true">架子鼓</option>
+                      <option value="2" hassubinfo="true">钢琴</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">授课形式 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="scale" tabindex="2">
+                      <option value="" selected="selected" disabled="disabled">选择形式</option>
+                      <option value="large" hassubinfo="true">大课种</option>
+                      <option value="small" hassubinfo="true">小课种</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="scale_hidden">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">具体类别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="detail" tabindex="2">
+                      <option value="" selected="selected" disabled="disabled">选择类别</option>
+                      <option value="0" hassubinfo="true">启蒙班</option>
+                      <option value="1" hassubinfo="true">初级班</option>
+                      <option value="2" hassubinfo="true">中级班</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                </div>
+                <div class="scale_hidden">
+                <div class="form-group" id="data_1">
+                  <label class="col-sm-3 control-label">开课日期 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group date">
+                      <span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+                      <input type="text" class="form-control date" id="startDate" value="2014-11-11">
+                    </div>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">任教教师 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="test_data_1">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">每节提成 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <span class="input-group-addon">&yen;</span>
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="scale_hidden">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">教室 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <select class="chosen-select form-control m-b" id="classroom" tabindex="2">
+                      <option value="" selected="selected" disabled="disabled">选择教室</option>
+                      <option value="0" hassubinfo="true">401</option>
+                      <option value="1" hassubinfo="true">402</option>
+                      <option value="2" hassubinfo="true">501</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">时间 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <p class="form-control-static"></p>
+                  </div>
+                </div>
+<div class="col-sm-8 col-sm-offset-2 tb_bg">
+  <div class="tb_title">
+  <span class="tb_button"><i class="fa fa-angle-left"></i></span>
+  <span class="tb_button"><i class="fa fa-angle-right"></i></span>
+  <h2>2017年 2/19 ~ 2/25</h2>
+  </div>
+  <ul class="tb_ul tb_bar">
+    <li class="tb_empty">&nbsp;</li>
+    <li class="tb_time">09:30 ~ 10:15</li>
+    <li class="tb_time">10:15 ~ 11:00</li>
+    <li class="tb_time">11:10 ~ 11:55</li>
+    <li class="tb_time">11:55 ~ 12:40</li>
+    <li class="tb_time">14:30 ~ 15:15</li>
+    <li class="tb_time">15:15 ~ 16:00</li>
+    <li class="tb_time">16:10 ~ 16:55</li>
+    <li class="tb_time">16:55 ~ 17:40</li>
+    <li class="tb_time">19:00 ~ 19:45</li>
+    <li class="tb_time">19:45 ~ 20:30</li>
+    <li class="tb_time">20:40 ~ 21:25</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周日</li>
+    <li class="tb_state x0 y00">&nbsp;</li>
+    <li class="tb_state x0 y01 tb_occupied">&nbsp;</li>
+    <li class="tb_state x0 y02 tb_occupied">&nbsp;</li>
+    <li class="tb_state x0 y03">&nbsp;</li>
+    <li class="tb_state x0 y04">&nbsp;</li>
+    <li class="tb_state x0 y05">&nbsp;</li>
+    <li class="tb_state x0 y06">&nbsp;</li>
+    <li class="tb_state x0 y07">&nbsp;</li>
+    <li class="tb_state x0 y08">&nbsp;</li>
+    <li class="tb_state x0 y09">&nbsp;</li>
+    <li class="tb_state x0 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周一</li>
+    <li class="tb_state x1 y00">&nbsp;</li>
+    <li class="tb_state x1 y01">&nbsp;</li>
+    <li class="tb_state x1 y02">&nbsp;</li>
+    <li class="tb_state x1 y03">&nbsp;</li>
+    <li class="tb_state x1 y04">&nbsp;</li>
+    <li class="tb_state x1 y05">&nbsp;</li>
+    <li class="tb_state x1 y06">&nbsp;</li>
+    <li class="tb_state x1 y07">&nbsp;</li>
+    <li class="tb_state x1 y08">&nbsp;</li>
+    <li class="tb_state x1 y09">&nbsp;</li>
+    <li class="tb_state x1 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周二</li>
+    <li class="tb_state x2 y00">&nbsp;</li>
+    <li class="tb_state x2 y01">&nbsp;</li>
+    <li class="tb_state x2 y02">&nbsp;</li>
+    <li class="tb_state x2 y03">&nbsp;</li>
+    <li class="tb_state x2 y04">&nbsp;</li>
+    <li class="tb_state x2 y05">&nbsp;</li>
+    <li class="tb_state x2 y06">&nbsp;</li>
+    <li class="tb_state x2 y07">&nbsp;</li>
+    <li class="tb_state x2 y08">&nbsp;</li>
+    <li class="tb_state x2 y09">&nbsp;</li>
+    <li class="tb_state x2 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周三</li>
+    <li class="tb_state x3 y00">&nbsp;</li>
+    <li class="tb_state x3 y01">&nbsp;</li>
+    <li class="tb_state x3 y02">&nbsp;</li>
+    <li class="tb_state x3 y03">&nbsp;</li>
+    <li class="tb_state x3 y04">&nbsp;</li>
+    <li class="tb_state x3 y05">&nbsp;</li>
+    <li class="tb_state x3 y06">&nbsp;</li>
+    <li class="tb_state x3 y07">&nbsp;</li>
+    <li class="tb_state x3 y08">&nbsp;</li>
+    <li class="tb_state x3 y09">&nbsp;</li>
+    <li class="tb_state x3 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周四</li>
+    <li class="tb_state x4 y00">&nbsp;</li>
+    <li class="tb_state x4 y01">&nbsp;</li>
+    <li class="tb_state x4 y02">&nbsp;</li>
+    <li class="tb_state x4 y03">&nbsp;</li>
+    <li class="tb_state x4 y04">&nbsp;</li>
+    <li class="tb_state x4 y05">&nbsp;</li>
+    <li class="tb_state x4 y06">&nbsp;</li>
+    <li class="tb_state x4 y07">&nbsp;</li>
+    <li class="tb_state x4 y08">&nbsp;</li>
+    <li class="tb_state x4 y09">&nbsp;</li>
+    <li class="tb_state x4 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周五</li>
+    <li class="tb_state x5 y00">&nbsp;</li>
+    <li class="tb_state x5 y01">&nbsp;</li>
+    <li class="tb_state x5 y02">&nbsp;</li>
+    <li class="tb_state x5 y03">&nbsp;</li>
+    <li class="tb_state x5 y04">&nbsp;</li>
+    <li class="tb_state x5 y05">&nbsp;</li>
+    <li class="tb_state x5 y06">&nbsp;</li>
+    <li class="tb_state x5 y07">&nbsp;</li>
+    <li class="tb_state x5 y08">&nbsp;</li>
+    <li class="tb_state x5 y09">&nbsp;</li>
+    <li class="tb_state x5 y10">&nbsp;</li>
+  </ul>
+  <ul class="tb_ul tb_content">
+    <li class="tb_workday">周六</li>
+    <li class="tb_state x6 y00">&nbsp;</li>
+    <li class="tb_state x6 y01">&nbsp;</li>
+    <li class="tb_state x6 y02">&nbsp;</li>
+    <li class="tb_state x6 y03">&nbsp;</li>
+    <li class="tb_state x6 y04">&nbsp;</li>
+    <li class="tb_state x6 y05">&nbsp;</li>
+    <li class="tb_state x6 y06">&nbsp;</li>
+    <li class="tb_state x6 y07">&nbsp;</li>
+    <li class="tb_state x6 y08">&nbsp;</li>
+    <li class="tb_state x6 y09">&nbsp;</li>
+    <li class="tb_state x6 y10">&nbsp;</li>
+  </ul>
+</div>
+                <div class="form-group">
+                  <div class="col-sm-2 col-sm-offset-9" style="padding-top:30px;">
+                    <button type="button" class="btn btn-primary showtoast">保存信息</button>
+                    <a class="btn btn-white" href="class_management.html">取消</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/plugins/cropper/cropper.min.js"></script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script>
+	  var testdataBsSuggest=$("#test_data_1").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"张有为","description":"13800000000"},
+			  {"id":"2","word":"王利锋","description":"13800000001"},
+			  {"id":"3","word":"张有为","description":"13800000002"},
+			  {"id":"4","word":"袁岳","description":"13800000003"},
+			  {"id":"5","word":"李全福","description":"13800000004"},
+			  {"id":"6","word":"张有为222","description":"13800000005"}
+			  ],"defaults":"10000000000"
+			  }
+			  });
+    </script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+    </script>
+<script>
+  $(".tb_state").click(function(){
+	  if($(this).hasClass("tb_occupied")){}
+	  else{$(this).toggleClass("tb_choosing")}
+	  });
+</script>
+    <script>
+	  $(function(){
+		  $("#scale").change(function(){
+			  if($("#scale").val()=="small"){
+				  $("#detail").attr("disabled",true);
+				  $("#startDate").attr("disabled",true);
+				  $("#classroom").attr("disabled",true);
+				  $(".scale_hidden").attr("hidden",true);
+				  } else if($("#scale").val()=="large"){
+					  $("#detail").attr("disabled",false);
+					  $("#startDate").attr("disabled",false);
+					  $("#classroom").attr("disabled",false);
+					  $(".scale_hidden").attr("hidden",false);
+					  }
+			  })
+		  });
+	</script>
+    <script src="js/demo/form-advanced-demo.min.js"></script>
+    <script src="js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="js/plugins/validate/messages_zh.min.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

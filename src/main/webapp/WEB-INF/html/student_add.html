@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增学生</title>
+    <meta name="keywords" content="add student">
+    <meta name="description" content="add student page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <!-- Dadepicker -->
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <!-- Drop Zone -->
+    <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>新增学生</h5>
+            </div>
+            <div class="ibox-content">
+              <form method="get" class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">姓名 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <input type="text" placeholder="最少两个字符" class="form-control">
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">注音</label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">性别 <span style="color:#f00">*</span></label>
+                  <div class="col-sm-7">
+                    <div class="radio-inline i-checks">
+                      <label><input type="radio" value="option1" name="a"> <i></i> 男</label>
+                    </div>
+                    <div class="radio-inline i-checks">
+                      <label><input type="radio" value="option2" name="a"> <i></i> 女</label>
+                    </div>
+                  </div>
+                </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group" id="data_1">
+                    <label class="col-sm-3 control-label">出生日期 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7 input-group date" style="padding-left:15px; padding-right:15px">
+                      <span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+                      <input type="text" class="form-control date" value="2014-11-11">
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">联系电话 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <div class="input-group-btn">
+                          <button tabindex="-1" class="btn btn-white" type="button">关系</button>
+                          <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="###">自己</a></li>
+                            <li><a href="###">父母</a></li>
+                            <li><a href="###">其他</a></li>
+                          </ul>
+                        </div>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">备用联系方式 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <div class="input-group-btn">
+                          <button tabindex="-1" class="btn btn-white" type="button">联系方式</button>
+                          <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="###">手机</a></li>
+                            <li><a href="###">微信</a></li>
+                            <li><a href="###">QQ</a></li>
+                          </ul>
+                        </div>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">学校单位 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7"><input type="text" class="form-control"></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <div class="col-sm-2 col-sm-offset-9">
+                      <button type="button" class="btn btn-primary showtoast">保存信息</button>
+                      <a class="btn btn-white" href="student_management.html">取消</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery.min.js?v=2.1.4"></script>
+      <script src="js/bootstrap.min.js?v=3.3.6"></script>
+      <script src="js/content.min.js?v=1.0.0"></script>
+      <script src="js/plugins/iCheck/icheck.min.js"></script>
+      <script src="js/plugins/dropzone/dropzone.js"></script>
+      <script>
+	  $(document).ready(function(){
+		  $(".i-checks").iCheck({
+			  checkboxClass:"icheckbox_square-green",
+			  radioClass:"iradio_square-green",
+			  })
+			  });
+    </script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+    </script>
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/plugins/cropper/cropper.min.js"></script>
+    <script src="js/demo/form-advanced-demo.min.js"></script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

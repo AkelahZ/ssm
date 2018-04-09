@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增教师</title>
+    <meta name="keywords" content="add teacher">
+    <meta name="description" content="add teacher page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <!-- Dadepicker -->
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <!-- Drop Zone -->
+    <link href="css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>新增教师</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">姓名 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <input type="text" placeholder="最少两个字符" class="form-control">
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">性别 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div class="radio-inline i-checks">
+                        <label><input type="radio" value="option1" name="a"> <i></i> 男</label>
+                      </div>
+                      <div class="radio-inline i-checks">
+                        <label><input type="radio" value="option2" name="a"> <i></i> 女</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">籍贯 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <select class="chosen-select form-control m-b" tabindex="2">
+                        <option value="" selected="selected" disabled="disabled">请选择省份</option>
+                        <option value="110000" hassubinfo="true">北京</option>
+                        <option value="120000" hassubinfo="true">天津</option>
+                        <option value="130000" hassubinfo="true">河北省</option>
+                        <option value="140000" hassubinfo="true">山西省</option>
+                        <option value="150000" hassubinfo="true">内蒙古自治区</option>
+                        <option value="210000" hassubinfo="true">辽宁省</option>
+                        <option value="220000" hassubinfo="true">吉林省</option>
+                        <option value="230000" hassubinfo="true">黑龙江省</option>
+                        <option value="310000" hassubinfo="true">上海</option>
+                        <option value="320000" hassubinfo="true">江苏省</option>
+                        <option value="330000" hassubinfo="true">浙江省</option>
+                        <option value="340000" hassubinfo="true">安徽省</option>
+                        <option value="350000" hassubinfo="true">福建省</option>
+                        <option value="360000" hassubinfo="true">江西省</option>
+                        <option value="370000" hassubinfo="true">山东省</option>
+                        <option value="410000" hassubinfo="true">河南省</option>
+                        <option value="420000" hassubinfo="true">湖北省</option>
+                        <option value="430000" hassubinfo="true">湖南省</option>
+                        <option value="440000" hassubinfo="true">广东省</option>
+                        <option value="450000" hassubinfo="true">广西壮族自治区</option>
+                        <option value="460000" hassubinfo="true">海南省</option>
+                        <option value="500000" hassubinfo="true">重庆</option>
+                        <option value="510000" hassubinfo="true">四川省</option>
+                        <option value="520000" hassubinfo="true">贵州省</option>
+                        <option value="530000" hassubinfo="true">云南省</option>
+                        <option value="540000" hassubinfo="true">西藏自治区</option>
+                        <option value="610000" hassubinfo="true">陕西省</option>
+                        <option value="620000" hassubinfo="true">甘肃省</option>
+                        <option value="630000" hassubinfo="true">青海省</option>
+                        <option value="640000" hassubinfo="true">宁夏回族自治区</option>
+                        <option value="650000" hassubinfo="true">新疆维吾尔自治区</option>
+                        <option value="710000" hassubinfo="true">台湾省</option>
+                        <option value="810000" hassubinfo="true">香港特别行政区</option>
+                        <option value="820000" hassubinfo="true">澳门特别行政区</option>
+                        <option value="990000" hassubinfo="true">海外</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">联系电话 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <input type="text" placeholder="请输入正确的11位手机号码" class="form-control">
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">任教科目 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <label class="checkbox i-checks"><input type="checkbox" value="option1">吉他</label>
+                      <label class="checkbox i-checks"><input type="checkbox" value="option2">架子鼓</label>
+                      <label class="checkbox i-checks"><input type="checkbox" value="option3">贝斯</label>
+                      <label class="checkbox i-checks"><input type="checkbox" value="option4">钢琴</label>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">毕业院校 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7"><input type="text" class="form-control"></div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group" id="data_1">
+                    <label class="col-sm-3 control-label">开始任教时间 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7 input-group date" style="padding-left:15px; padding-right:15px">
+                      <span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+                      <input type="text" class="form-control date" value="2014-11-11">
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">招生提成 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div class="input-group m-b">
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">%</span>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">上传照片 <span style="color:#f00">*</span></label>
+                    <div class="col-sm-7">
+                      <div id="my-awesome-dropzone" class="dropzone" action="http://www.zi-han.net/theme/hplus/form_file_upload.html#">
+                        <div class="dropzone-previews"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <div class="col-sm-2 col-sm-offset-9">
+                      <button type="button" class="btn btn-primary showtoast">保存信息</button>
+                      <a class="btn btn-white" href="teacher_management.html">取消</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/jquery.min.js?v=2.1.4"></script>
+      <script src="js/bootstrap.min.js?v=3.3.6"></script>
+      <script src="js/content.min.js?v=1.0.0"></script>
+      <script src="js/plugins/iCheck/icheck.min.js"></script>
+      <script src="js/plugins/dropzone/dropzone.js"></script>
+      <script>
+	  $(document).ready(function(){
+		  $(".i-checks").iCheck({
+			  checkboxClass:"icheckbox_square-green",
+			  radioClass:"iradio_square-green",
+			  })
+			  });
+				  
+	  $(document).ready(function(){
+		  Dropzone.options.myAwesomeDropzone={
+			  autoProcessQueue:false,
+			  uploadMultiple:true,
+			  parallelUploads:100,
+			  maxFiles:100,
+			  init:function(){
+				  var myDropzone=this;
+				  this.element.querySelector("button[type=submit]").addEventListener("click",function(e){
+					  e.preventDefault();
+					  e.stopPropagation();
+					  myDropzone.processQueue()
+					  });
+					  this.on("sendingmultiple",function(){});
+					  this.on("successmultiple",function(files,response){});
+					  this.on("errormultiple",function(files,response){})
+					  }
+					  }
+					  });
+    </script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+    </script>
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/plugins/cropper/cropper.min.js"></script>
+    <script src="js/demo/form-advanced-demo.min.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

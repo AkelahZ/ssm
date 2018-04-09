@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本班学生</title>
+    <meta name="keywords" content="student of class">
+    <meta name="description" content="student of class page">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="ibox">
+            <div class="ibox-content">
+              <div class="col-sm-2 pull-right" style="padding-right:0;">
+                <a class="btn btn-primary btn-sm btn-block" href="student_of_class_print.html"><i class="fa fa-print"></i> 打印列表</a>
+              </div>
+              <div class="col-sm-2 pull-right" style="padding-right:0;">
+                <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal2"><i class="fa fa-edit"></i> 添加连报学生</button>
+              </div>
+              <div class="col-sm-2 pull-right" style="padding-right:0;">
+                <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> 添加学生</button>
+              </div>
+              <h2>吉他启蒙班（2017/3）学生</h2>
+              <div class="input-group m-b-lg">
+                <input type="text" placeholder="查找学生" class="input form-control">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> 搜索</button>
+                </span>
+              </div>
+              <div class="clients-list">
+                <ul class="nav nav-tabs">
+                  <span class="pull-right small text-muted">100 个学生</span>
+                  <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-user"></i> 学生列表</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="tab-1" class="tab-pane active" style="height: 654px;">
+                    <div class="full-height-scroll">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                          <tbody>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-1" class="client-link">袁岳</a></td>
+                              <td>Yuan Yue</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"></i></td>
+                              <td> 13800000000</td>
+                              <td class="client-status">
+                                湖南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-2" class="client-link">王利锋</a></td>
+                              <td>Wang Lifeng</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000001</td>
+                              <td class="client-status">
+                                中南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-3" class="client-link">张有为 </a></td>
+                              <td>Zhang Youwei</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000002</td>
+                              <td class="client-status">
+                                湖南师范大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-4" class="client-link">李全福</a></td>
+                              <td>Li Quanfu</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000003</td>
+                              <td class="client-status">
+                                xxx
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-1" class="client-link">袁岳</a></td>
+                              <td>Yuan Yue</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"></i></td>
+                              <td> 13800000000</td>
+                              <td class="client-status">
+                                湖南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-2" class="client-link">王利锋</a></td>
+                              <td>Wang Lifeng</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000001</td>
+                              <td class="client-status">
+                                中南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-3" class="client-link">张有为 </a></td>
+                              <td>Zhang Youwei</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000002</td>
+                              <td class="client-status">
+                                湖南师范大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-4" class="client-link">李全福</a></td>
+                              <td>Li Quanfu</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000003</td>
+                              <td class="client-status">
+                                xxx
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-1" class="client-link">袁岳</a></td>
+                              <td>Yuan Yue</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"></i></td>
+                              <td> 13800000000</td>
+                              <td class="client-status">
+                                湖南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-2" class="client-link">王利锋</a></td>
+                              <td>Wang Lifeng</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000001</td>
+                              <td class="client-status">
+                                中南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-3" class="client-link">张有为 </a></td>
+                              <td>Zhang Youwei</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000002</td>
+                              <td class="client-status">
+                                湖南师范大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-4" class="client-link">李全福</a></td>
+                              <td>Li Quanfu</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000003</td>
+                              <td class="client-status">
+                                xxx
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-1" class="client-link">袁岳</a></td>
+                              <td>Yuan Yue</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"></i></td>
+                              <td> 13800000000</td>
+                              <td class="client-status">
+                                湖南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-2" class="client-link">王利锋</a></td>
+                              <td>Wang Lifeng</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000001</td>
+                              <td class="client-status">
+                                中南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-3" class="client-link">张有为 </a></td>
+                              <td>Zhang Youwei</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000002</td>
+                              <td class="client-status">
+                                湖南师范大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-4" class="client-link">李全福</a></td>
+                              <td>Li Quanfu</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000003</td>
+                              <td class="client-status">
+                                xxx
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-1" class="client-link">袁岳</a></td>
+                              <td>Yuan Yue</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"></i></td>
+                              <td> 13800000000</td>
+                              <td class="client-status">
+                                湖南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-2" class="client-link">王利锋</a></td>
+                              <td>Wang Lifeng</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000001</td>
+                              <td class="client-status">
+                                中南大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-3" class="client-link">张有为 </a></td>
+                              <td>Zhang Youwei</td>
+                              <td>男</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000002</td>
+                              <td class="client-status">
+                                湖南师范大学
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><a data-toggle="tab" href="#contact-4" class="client-link">李全福</a></td>
+                              <td>Li Quanfu</td>
+                              <td>女</td>
+                              <td class="contact-type"><i class="fa fa-phone"> </i></td>
+                              <td> 13800000003</td>
+                              <td class="client-status">
+                                xxx
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="ibox ">
+            <div class="ibox-content">
+              <div class="tab-content">
+                <div id="contact-1" class="tab-pane active">
+                  <div class="row m-b-lg">
+                    <div class="col-lg-4 text-center">
+                      <h2>张有为</h2><small>Zhang Youwei</small>
+                      <div class="m-b-sm">
+                        <img alt="image" class="img-circle" src="img/a2.jpg" style="width: 62px">
+                      </div>
+                    </div>
+                    <div class="col-lg-8">
+                      <h3>院校单位</h3>
+                      <p>湖南大学</p>
+                      <h3>出生日期</h3>
+                      <p>1/1/1996</p>
+                      <h3>联系电话</h3>
+                      <p>13800000000（自己）</p>
+                      <h3>备用联系方式</h3>
+                      <p>xxx（QQ）</p>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="client-detail" style="height: 466px;">
+                    <div class="full-height-scroll">
+                      <strong>正在学习</strong>
+                      <ul class="list-group clear-list">
+                        <li class="list-group-item fist-item">
+                          <span class="pull-right"> 周六 09:00 ~ 10:00</span> 吉他中级班（2017/3）
+                        </li>
+                        <li class="list-group-item">
+                          <span class="pull-right"> 周日 09:00 ~ 10:00</span> 架子鼓初级班（2017/3）
+                        </li>
+                        <li class="list-group-item">
+                          <span class="pull-right"> 周日 13:00 ~ 14:00</span> 钢琴一对一
+                        </li>
+                      </ul>
+                      <strong>历史学习</strong>
+                      <ul class="list-group clear-list">
+                        <li class="list-group-item fist-item">
+                          <span class="pull-right"> 周六 09:00 ~ 10:00</span> 吉他启蒙班（2016/3）
+                        </li>
+                        <li class="list-group-item">
+                          <span class="pull-right"> 周日 09:00 ~ 10:00</span> 吉他初级班（2017/9）
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                      <div class="m-b-lg">
+                        <button type="button" class="btn btn-primary btn-sm btn-block demo"><i class="fa fa-edit"></i> 从本班中移除此学生</button>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+                        <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                                        </button>
+                                        <i class="fa fa-edit modal-icon"></i>
+                                        <h4 class="modal-title">添加连报学生</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                    <div class="form-group">
+                                                    <label>学生姓名</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data_1">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary showtoast" data-dismiss="modal">保存</button>
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                                        </button>
+                                        <i class="fa fa-edit modal-icon"></i>
+                                        <h4 class="modal-title">添加学生</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                    <div class="form-group">
+                                                    <label>学生姓名</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control test_data_2">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary showtoast" data-dismiss="modal">保存</button>
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script>
+        $(function(){$(".full-height-scroll").slimScroll({height:"100%"})});
+    </script>
+      <script src="js/plugins/suggest/bootstrap-suggest.min.js"></script>
+      <script>
+	  var testdataBsSuggest=$(".test_data_1").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"张有为","description":"0/2, 启蒙 + 初级"},
+			  {"id":"2","word":"王利锋","description":"0/3, 启蒙 + 初级 + 中级"},
+			  {"id":"3","word":"袁岳","description":"0/4"},
+			  ],"defaults":"10000000000"
+			  }
+			  });
+	  </script>
+      <script>
+	  var testdataBsSuggest=$(".test_data_2").bsSuggest({
+		  indexId:2,
+		  indexKey:1,
+		  data:{
+			  "value":[
+			  {"id":"1","word":"张有为","description":"13800000000"},
+			  {"id":"2","word":"王利锋","description":"13800000001"},
+			  {"id":"3","word":"张有为","description":"13800000002"},
+			  {"id":"4","word":"袁岳","description":"13800000003"},
+			  {"id":"5","word":"李全福","description":"13800000004"},
+			  {"id":"6","word":"张有为222","description":"13800000005"}
+			  ],"defaults":"10000000000"
+			  }
+			  });
+	  </script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+    </script>
+    <script>
+		$(".demo").click(function(){
+			swal(
+			{title:"您确定要删除这条信息吗",text:"删除后将无法恢复，请谨慎操作！",type:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",confirmButtonText:"删除",closeOnConfirm:true},
+			function(){
+					var shortCutFunction="warning";
+					var msg="条目已删除";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);}
+			)
+			});
+	</script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>

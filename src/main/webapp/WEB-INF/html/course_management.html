@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script src="https://use.typekit.net/wbi8ikb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程管理</title>
+    <meta name="keywords" content="course management">
+    <meta name="description" content="course management page">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="css/cheney.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ibox">
+            <div class="ibox-content">
+              <div class="row">
+                <div class="col-sm-12 m-b-lg">
+                  <div class="col-sm-3 pull-right" style="padding-right:0;">
+                    <a class="btn btn-primary btn-sm btn-block" href="course_add.html"><i class="fa fa-edit"></i> 新增课程</a>
+                  </div>
+                  <h2>课程管理</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3 m-b-lg">
+                  <select class="input-sm form-control input-s-sm inline">
+                    <option selected="selected" disabled="disabled">科目</option>
+                    <option value="0">吉他</option>
+                    <option value="1">架子鼓</option>
+                    <option value="2">贝斯</option>
+                  </select>
+                </div>
+                <div class="col-sm-3 m-b-lg">
+                  <select class="input-sm form-control input-s-sm inline">
+                    <option selected="selected" disabled="disabled">授课形式</option>
+                    <option value="0">大课种</option>
+                    <option value="1">小课种</option>
+                  </select>
+                </div>
+                <div class="col-sm-3 m-b-lg">
+                  <select class="input-sm form-control input-s-sm inline">
+                    <option selected="selected" disabled="disabled">具体类别</option>
+                    <option value="0">启蒙班</option>
+                    <option value="1">初级班</option>
+                    <option value="2">中级班</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>吉他启蒙班</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">额定人数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">课时数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">总价</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">￥300.00</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> 编辑课程</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block demo"><i class="fa fa-edit"></i> 删除课程</button>
+                  </div>
+                </div>
+              </form>
+                        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                                        </button>
+                                        <i class="fa fa-edit modal-icon"></i>
+                                        <h4 class="modal-title">编辑课程</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                    <div class="form-group">
+                                                    <label>额定人数</label>
+                    <input type="text" class="form-control" value="15">
+                                        </div>
+                                                    <div class="form-group">
+                                                    <label>课时数</label>
+                    <input type="text" class="form-control" value="30">
+                                        </div>
+                                                    <div class="form-group">
+                                                    <label>总价</label>
+                      <div class="input-group m-b">
+                        <span class="input-group-addon">&yen;</span>
+                        <input type="text" class="form-control" value="300">
+                        <span class="input-group-addon">.00</span>
+                      </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary showtoast" data-dismiss="modal">保存</button>
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>吉他初级班</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">额定人数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">课时数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">总价</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">￥500.00</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> 编辑课程</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block demo"><i class="fa fa-edit"></i> 删除课程</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>吉他中级班</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">额定人数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">课时数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">总价</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">￥700.00</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> 编辑课程</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block demo"><i class="fa fa-edit"></i> 删除课程</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>架子鼓启蒙班</h5>
+            </div>
+            <div class="ibox-content">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">额定人数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">课时数</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">30</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">总价</label>
+                  <div class="col-sm-5 col-sm-offset-1">
+                    <p class="form-control-static">￥300.00</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> 编辑课程</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-8 col-sm-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm btn-block demo"><i class="fa fa-edit"></i> 删除课程</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+				$(".showtoast").click(function(){
+					var shortCutFunction="success";
+					var msg="信息已录入";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);
+															});
+															});
+    </script>
+    <script>
+		$(".demo").click(function(){
+			swal(
+			{title:"您确定要删除这条信息吗",text:"删除后将无法恢复，请谨慎操作！",type:"warning",showCancelButton:true,confirmButtonColor:"#DD6B55",confirmButtonText:"删除",closeOnConfirm:true},
+			function(){
+					var shortCutFunction="warning";
+					var msg="条目已删除";
+					var title="操作成功";
+					var $showDuration="3000";
+					var $hideDuration="1000";
+					var $timeOut="5000";
+					var $extendedTimeOut="1000";
+					var $showEasing="swing";
+					var $hideEasing="linear";
+					var $showMethod="fadeIn";
+					var $hideMethod="fadeOut";
+					toastr.options={
+						closeButton:true,
+						debug:false,
+						progressBar:true,
+						positionClass:"toast-top-full-width",
+						onclick:null};
+						if($showDuration){
+							toastr.options.showDuration=$showDuration
+							}if($hideDuration){
+								toastr.options.hideDuration=$hideDuration
+								}if($timeOut){
+									toastr.options.timeOut=$timeOut
+									}if($extendedTimeOut){
+										toastr.options.extendedTimeOut=$extendedTimeOut
+										}if($showEasing){
+											toastr.options.showEasing=$showEasing
+											}if($hideEasing){
+												toastr.options.hideEasing=$hideEasing
+												}if($showMethod){
+													toastr.options.showMethod=$showMethod
+													}if($hideMethod){
+														toastr.options.hideMethod=$hideMethod
+														}if(!msg){
+															msg=getMessage()
+															}
+															var $toast=toastr[shortCutFunction](msg,title);}
+			)
+			});
+	</script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  </body>
+</html>
