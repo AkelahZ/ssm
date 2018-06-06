@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soecode.lyf.IDao.UserDao">
+
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.User">
+    <id column="user_Id" jdbcType="INTEGER" property="userId" />
+    <result column="user_Department" jdbcType="INTEGER" property="userDepartment" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_Id, user_Department, password, account, user_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultDao">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where user_Id = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultDao">
+    select
+    <include refid="Base_Column_List" />
+    from user
+  </select>
+  <select id="selectByPandA" parameterType="map" resultMap="BaseResultDao">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where account = #{account} and password=#{password}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where user_Id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.soecode.lyf.entity.User">
+    insert into user (user_Id, user_Department, password, 
+      account, user_name)
+    values (#{userId,jdbcType=INTEGER}, #{userDepartment,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, 
+      #{account,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userId"  parameterType="com.soecode.lyf.entity.User">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_Id,
+      </if>
+      <if test="userDepartment != null">
+        user_Department,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userDepartment != null">
+        #{userDepartment,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soecode.lyf.entity.User">
+    update user
+    <set>
+      <if test="userDepartment != null">
+        user_Department = #{userDepartment,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_Id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soecode.lyf.entity.User">
+    update user
+    set user_Department = #{userDepartment,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR},
+      account = #{account,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR}
+    where user_Id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

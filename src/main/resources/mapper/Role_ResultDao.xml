@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.Role_ResultDao" >
+  <sql id="Base_Column_List">
+   role_Id,role_Name,power_Id,power_Name
+  </sql>
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Role_Result" >
+    <result column="role_Id" property="roleId" jdbcType="INTEGER" />
+    <result column="role_Name" property="roleName" jdbcType="VARCHAR" />
+    <result column="power_Id" property="powerId" jdbcType="INTEGER" />
+    <result column="power_Name" property="powerName" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseResultDao">
+    select
+    <include refid="Base_Column_List" />
+    from role_result
+  </select>
+  <select id="getAllById" resultMap="BaseResultDao">
+    select
+    <include refid="Base_Column_List" />
+    from role_result
+    where role_id=#{role_id}
+  </select>
+</mapper>

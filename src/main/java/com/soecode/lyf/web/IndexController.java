@@ -18,4 +18,9 @@ public class IndexController {
         System.out.println("this is homepage!!!");
         return "a";
     }
+    @RequestMapping("/system_index")
+    public String system_index(){
+
+        return "system_index";
+    }
 }

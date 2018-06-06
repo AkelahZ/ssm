@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.Supply_ResultDao" >
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Supply_Result" >
+    <result column="supply_Id" property="supplyId" jdbcType="INTEGER" />
+    <result column="rest_Num" property="restNum" jdbcType="INTEGER" />
+    <result column="product_Id" property="productId" jdbcType="INTEGER" />
+    <result column="product_Name" property="productName" jdbcType="VARCHAR" />
+    <result column="supply_Name" property="supplyName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    supply_Id, product_Name,rest_Num, product_Id, supply_Name
+  </sql>
+  <select id="selectAll" resultMap="BaseResultDao" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from supply_result
+  </select>
+</mapper>

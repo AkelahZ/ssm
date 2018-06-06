@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.OrderDao" >
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Order" >
+    <id column="order_Id" property="orderId" jdbcType="INTEGER" />
+    <result column="order_Name" property="orderName" jdbcType="VARCHAR" />
+    <result column="department_Id" property="departmentId" jdbcType="INTEGER" />
+    <result column="operator_Id" property="operatorId" jdbcType="INTEGER" />
+    <result column="order_Type" property="orderType" jdbcType="INTEGER" />
+    <result column="order_Date" property="orderDate" jdbcType="TIMESTAMP" />
+    <result column="order_Status" property="orderStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    order_Id, order_Name, department_Id, operator_Id, order_Type, order_Date, order_Status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultDao" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from `order`
+    where order_Id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByType" resultMap="BaseResultDao" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from `order`
+    where order_Type = #{orderType,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultDao">
+    select
+    <include refid="Base_Column_List" />
+    from order
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from `order`
+    where order_Id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.soecode.lyf.entity.Order" >
+    insert into `order`(order_Id, order_Name, department_Id,
+      operator_Id, order_Type, order_Date, 
+      order_Status)
+    values (#{orderId,jdbcType=INTEGER}, #{orderName,jdbcType=VARCHAR}, #{departmentId,jdbcType=INTEGER}, 
+      #{operatorId,jdbcType=INTEGER}, #{orderType,jdbcType=INTEGER}, #{orderDate,jdbcType=TIMESTAMP}, 
+      #{orderStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective"  useGeneratedKeys="true" keyProperty="orderId" parameterType="com.soecode.lyf.entity.Order" >
+    INSERT INTO `order`
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        order_Id,
+      </if>
+      <if test="orderName != null" >
+        order_Name,
+      </if>
+      <if test="departmentId != null" >
+        department_Id,
+      </if>
+      <if test="operatorId != null" >
+        operator_Id,
+      </if>
+      <if test="orderType != null" >
+        order_Type,
+      </if>
+      <if test="orderDate != null" >
+        order_Date,
+      </if>
+      <if test="orderStatus != null" >
+        order_Status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderName != null" >
+      #{orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+      #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="operatorId != null" >
+       #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null" >
+      #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null" >
+       #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null" >
+       #{orderStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soecode.lyf.entity.Order" >
+    update order
+    <set >
+      <if test="orderName != null" >
+        order_Name = #{orderName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        department_Id = #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="operatorId != null" >
+        operator_Id = #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null" >
+        order_Type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null" >
+        order_Date = #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null" >
+        order_Status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where order_Id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soecode.lyf.entity.Order" >
+    update order
+    set order_Name = #{orderName,jdbcType=VARCHAR},
+      department_Id = #{departmentId,jdbcType=INTEGER},
+      operator_Id = #{operatorId,jdbcType=INTEGER},
+      order_Type = #{orderType,jdbcType=INTEGER},
+      order_Date = #{orderDate,jdbcType=TIMESTAMP},
+      order_Status = #{orderStatus,jdbcType=INTEGER}
+    where order_Id = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>

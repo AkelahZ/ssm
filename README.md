@@ -280,7 +280,7 @@
 	</bean>
 
 	<!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<bean class="org.mybatis.spring.mapper.DaoScannerConfigurer">
 		<!-- 注入sqlSessionFactory -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 给出需要扫描Dao接口包 -->
@@ -633,7 +633,7 @@ public interface AppointmentDao {
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    PUBLIC "-//mybatis.org//DTD Dao 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.soecode.lyf.dao.BookDao">
 	<!-- 目的：为dao接口方法提供sql语句配置 -->
@@ -675,7 +675,7 @@ public interface AppointmentDao {
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    PUBLIC "-//mybatis.org//DTD Dao 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.soecode.lyf.dao.AppointmentDao">
 	<insert id="insertAppointment">

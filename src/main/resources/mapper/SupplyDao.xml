@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.SupplyDao" >
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Supply" >
+    <id column="supply_Id" property="supplyId" jdbcType="INTEGER" />
+    <result column="supply_Name" property="supplyName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    supply_Id, supply_Name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultDao" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from supply
+    where supply_Id = #{supplyId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultDao"  >
+    select
+    <include refid="Base_Column_List" />
+    from supply
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from supply
+    where supply_Id = #{supply_Id,jdbcType=INTEGER};
+  </delete>
+  <insert id="insert" parameterType="com.soecode.lyf.entity.Supply" >
+    insert into supply (supply_Id, supply_Name)
+    values (#{supplyId,jdbcType=INTEGER}, #{supplyName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="supplyId" parameterType="com.soecode.lyf.entity.Supply" >
+    insert into supply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="supplyId != null" >
+        supply_Id,
+      </if>
+      <if test="supplyName != null" >
+        supply_Name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="supplyId != null" >
+        #{supplyId,jdbcType=INTEGER},
+      </if>
+      <if test="supplyName != null" >
+        #{supplyName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soecode.lyf.entity.Supply" >
+    update supply
+    <set >
+      <if test="supplyName != null" >
+        supply_Name = #{supplyName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where supply_Id = #{supplyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soecode.lyf.entity.Supply" >
+    update supply
+    set supply_Name = #{supplyName,jdbcType=VARCHAR}
+    where supply_Id = #{supplyId,jdbcType=INTEGER}
+  </update>
+</mapper>

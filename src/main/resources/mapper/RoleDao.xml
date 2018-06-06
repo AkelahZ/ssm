@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.RoleDao" >
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Role" >
+    <id column="role_Id" property="roleId" jdbcType="INTEGER" />
+    <result column="role_Name" property="roleName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    role_Id, role_Name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultDao" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from role
+    where role_Id = #{roleId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultDao" >
+    select
+    <include refid="Base_Column_List" />
+    from role
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from role
+    where role_Id = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.soecode.lyf.entity.Role" >
+    insert into role (role_Id, role_Name)
+    values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.soecode.lyf.entity.Role" >
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        role_Id,
+      </if>
+      <if test="roleName != null" >
+        role_Name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soecode.lyf.entity.Role" >
+    update role
+    <set >
+      <if test="roleName != null" >
+        role_Name = #{roleName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where role_Id = #{roleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soecode.lyf.entity.Role" >
+    update role
+    set role_Name = #{roleName,jdbcType=VARCHAR}
+    where role_Id = #{roleId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.soecode.lyf.IDao.DepartmentDao" >
+  <resultMap id="BaseResultDao" type="com.soecode.lyf.entity.Department" >
+    <id column="department_Id" property="departmentId" jdbcType="INTEGER" />
+    <result column="department_Name" property="departmentName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    department_Id, department_Name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultDao" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from department
+    where department_Id = #{departmentId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultDao" >
+    select
+    <include refid="Base_Column_List" />
+    from department
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from department
+    where department_Id = #{departmentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.soecode.lyf.entity.Department" >
+    insert into department (department_Id, department_Name)
+    values (#{departmentId,jdbcType=INTEGER}, #{departmentName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.soecode.lyf.entity.Department" >
+    insert into department
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="departmentId != null" >
+        department_Id,
+      </if>
+      <if test="departmentName != null" >
+        department_Name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="departmentName != null" >
+        #{departmentName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.soecode.lyf.entity.Department" >
+    update department
+    <set >
+      <if test="departmentName != null" >
+        department_Name = #{departmentName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where department_Id = #{departmentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.soecode.lyf.entity.Department" >
+    update department
+    set department_Name = #{departmentName,jdbcType=VARCHAR}
+    where department_Id = #{departmentId,jdbcType=INTEGER}
+  </update>
+</mapper>

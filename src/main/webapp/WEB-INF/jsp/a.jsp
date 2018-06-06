@@ -10,9 +10,9 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-    System.out.println(basePath);
 %>
-
+<%@ taglib prefix="c"
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-Hans">
@@ -53,12 +53,18 @@
             </div>
         </div>
         <div class="col-sm-5">
-            <form id="login-form">
+            <form id="login-form" method="post" action="<%=basePath%>login/commit">
                 <h4 class="no-margins">登录：</h4>
-                <p class="m-t-md">登录到物资管理系统</p>
-                <input id="id" name="id" type="text" class="form-control uname" placeholder="用户名"/>
-                <input id="passwd" name="passwd" type="password" class="form-control pword m-b" placeholder="密码"/>
-                <a href="javascript:void(0);">忘记密码了？</a>
+                <input id="id" name="account" type="text" class="form-control uname" placeholder="用户名"/>
+                <input id="passwd" name="password" type="password" class="form-control pword m-b" placeholder="密码"/>
+              <%if(session.getAttribute("login")!=null){
+                  if((int)session.getAttribute("login")==0){%>
+                  <p id="veri1" class="m-t-md" style="color:#ed5565">帐号或密码错误</p>
+              <%}}%>
+
+
+                <!-- <a href="javascript:void(0);">忘记密码了？</a>
+                -->
                 <a id="login-sub" class="btn btn-success btn-block" href="javascript:void(0);"><i
                         class="fa fa-sign-in"></i>
                     <span class="nav-label">登录</span></a>
@@ -87,36 +93,20 @@
 
         $("#id").bind('keypress', function (event) {
             if (event.keyCode === 13)
-                login();
+                $("#login-form").submit();
         });
 
         $("#passwd").bind('keypress', function (event) {
             if (event.keyCode === 13)
-                login();
+                $("#login-form").submit();
         });
 
         $("#login-sub").click(function () {
-            login();
+            $("#login-form").submit();
         });
     });
 
-    function login() {
-        var url = "account-login";
-        var args = {
-            "staffTel": $("input[name='id']").val(),
-            "staffPassword": $("input[name='passwd']").val()
-        };
-        $.post(url, args, function (data) {
-            if (data === "1") {
-                location.href = "account-home";
-            } else {
-                if ($("#veri1").length <= 0) {
-                    $("input[name='passwd']").after("<p id=\"veri1\" class=\"m-t-md\" style=\"color:#ed5565\">帐号或密码错误</p>");
-                }
-            }
-        });
-        return false;
-    }
+
 </script>
 </body>
 </html>

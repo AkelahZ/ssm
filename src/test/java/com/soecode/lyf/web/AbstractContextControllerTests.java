@@ -6,7 +6,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.WebApplicationContext;
 
 @WebAppConfiguration
-@ContextConfiguration({ "classpath:spring/spring-web.xml", "classpath:spring/spring-service.xml",
+@ContextConfiguration({"classpath:spring/spring-web.xml", "classpath:spring/spring-service.xml",
 		"classpath:spring/spring-dao.xml" })
 public class AbstractContextControllerTests {
 
